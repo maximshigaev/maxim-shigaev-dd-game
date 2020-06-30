@@ -79,3 +79,10 @@ img {
 		padding-right: 15px;
 	}
 }
+
+@media (min-width: 1140px) {
+	body {
+		padding-left: 140px;
+		padding-right: 140px;
+	}
+}
