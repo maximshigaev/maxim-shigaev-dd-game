@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { BarList } from '../barList/BarList.jsx';
+import './App.scss';
 
 const App = () => {
     const [bars, setBars] = useState([
@@ -10,7 +11,11 @@ const App = () => {
         {title: 'Усталость', color: '#95a5a6', quantity: 50, id: 4}
     ]);
 
-    return <BarList bars={bars} />;
+    return (
+        <div className="wrapper">
+            <BarList bars={bars} />
+        </div>
+    );
 }
 
 export { App };
