@@ -4,3 +4,11 @@
     background-color: #ffffff;
     padding-bottom: 11px;
 }
+
+
+@media (min-width: 768px) {
+    .barlist {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+    }
+}
