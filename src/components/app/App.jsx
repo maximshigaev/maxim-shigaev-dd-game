@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import { BarList } from '../barList/BarList.jsx';
+import { Header } from '../header/Header.jsx';
+
 import './App.scss';
 
 const App = () => {
@@ -12,9 +14,12 @@ const App = () => {
     ]);
 
     return (
-        <div className="wrapper">
-            <BarList bars={bars} />
-        </div>
+        <>
+            <Header />
+            <main className="wrapper">
+                <BarList bars={bars} />
+            </main>
+        </>
     );
 }
 
