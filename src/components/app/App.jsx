@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BarList } from '../barList/BarList.jsx';
 import { Header } from '../header/Header.jsx';
 import { ControlList } from '../controlList/ControlList.jsx';
+import { TextArea } from '../textArea/TextArea.jsx';
 
 import './App.scss';
 
@@ -27,6 +28,7 @@ const App = () => {
             <main className="wrapper">
                 <BarList bars={bars} />
                 <ControlList actions={actions} />
+                <TextArea  />
             </main>
         </>
     );
