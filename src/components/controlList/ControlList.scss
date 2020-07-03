@@ -8,3 +8,10 @@
         margin-bottom: 12px;
     }
 }
+
+@media (min-width: 768px) {
+    .controllist {
+        width: calc(50% - 20px);
+        margin-left: 20px;
+    }
+}

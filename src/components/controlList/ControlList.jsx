@@ -5,7 +5,7 @@ import './ControlList.scss';
 
 const ControlList = ({actions}) => {
     return (
-        <div className="controllist">
+        <div className="controllist wrapper__item">
             {actions.map((control) => <Control options={control} key={control.id} />)}
         </div>
     );
