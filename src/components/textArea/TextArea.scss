@@ -11,3 +11,9 @@
         color: #bdc3c7;
     }
 }
+
+@media (min-width: 768px) {
+	.textarea {
+        min-height: 60px;
+    }
+}

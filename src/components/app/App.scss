@@ -12,5 +12,9 @@
 		display: flex;
         flex-wrap: wrap;
         padding: 30px;
-	}
+
+        &__item {
+            margin-bottom: 34px;
+        }
+    }
 }
