@@ -2,13 +2,14 @@ import React from 'react';
 
 import './Control.scss';
 
-const Control = ({options: {action, color} = {action: "Есть", color: "red"}}) => {
+const Control = ({options: {action, color}}) => {
     const controlStyle = {
-        backgroundColor: color
+        backgroundColor: color,
+        boxShadow: `0 0 3px ${color}`
     };
 
     return (
-        <div className="control" style={controlStyle}>
+        <div className="control controllist__item" style={controlStyle}>
             {action}
         </div>
     );

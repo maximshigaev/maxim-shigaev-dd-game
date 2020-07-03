@@ -1,6 +1,10 @@
 .wrapper {
     background-color: white;
     padding: 20px;
+
+    &__item {
+        margin-bottom: 20px;
+    }
 }
 
 @media (min-width: 768px) {
