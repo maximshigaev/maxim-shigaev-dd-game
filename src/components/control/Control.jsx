@@ -3,11 +3,21 @@ import PropTypes from 'prop-types';
 
 import './Control.scss';
 
-const Control = ({options: {action, modifier}, handleClick}) => (
-    <div className={`control controllist__item control--${modifier}`} tabIndex={0} onClick={handleClick}>
-        {action}
-    </div>
-);
+const Control = ({options: {action, modifier}, handleClick}) => {
+    const enterPressHandler = (evt) => {        
+        if (evt.keyCode === 13) {
+            handleClick(evt);
+        }
+    }
+
+    return (
+        <div className={`control controllist__item control--${modifier}`} tabIndex={0} onClick={handleClick}
+            onKeyDown={enterPressHandler}
+        >
+            {action}
+        </div>
+    );
+}
 
 Control.propTypes = {
     options: PropTypes.shape({
