@@ -8,4 +8,55 @@
     padding-right: 20px;
     text-align: center;
     border-radius: 5px;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    &--eat {
+        background-color: #e74c3c;
+        box-shadow: 0px 0px 3px rgba(231, 76, 60, 0.5);
+
+        &:hover,
+        &:focus {
+            background: #C0392B;
+        }
+
+        
+    }
+
+    &--drink {
+        background-color: #3498db;
+        box-shadow: 0px 0px 3px rgba(52, 152, 219, 0.5);
+
+        &:hover,
+        &:focus {
+            background: #2980B9;
+        }
+    }
+
+    &--rest {
+        background-color: #e67e22;
+        box-shadow: 0px 0px 3px rgba(230, 126, 34, 0.5);
+
+        &:hover,
+        &:focus {
+            background: #D35400;
+        }
+    }
+
+    &--work {
+        background-color: #95a5a6;
+        box-shadow: 0px 0px 3px rgba(149, 165, 166, 0.5);
+
+        &:hover,
+        &:focus {
+            background: #7F8C8D;
+        }
+    }
 }
