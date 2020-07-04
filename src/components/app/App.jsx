@@ -5,23 +5,13 @@ import { Header } from '../header/Header.jsx';
 import { ControlList } from '../controlList/ControlList.jsx';
 import { TextArea } from '../textArea/TextArea.jsx';
 import * as helpers from '../../helpers';
+import { initialBars, initialActions } from '../../store';
 
 import './App.scss';
 
 const App = () => {
-    const [bars, setBars] = useState([
-        {title: `Здоровье`, color: `#e74c3c`, quantity: 50, id: 1},
-        {title: `Жажда`, color: `#3498db`, quantity: 50, id: 2},
-        {title: `Голод`, color: `#e67e22`, quantity: 50, id: 3},
-        {title: `Усталость`, color: `#95a5a6`, quantity: 50, id: 4}
-    ]);
-
-    const [actions, setActions] = useState([
-        {action: `Есть`, color: `#e74c3c`, id: 1}, 
-        {action: `Пить`, color: `#3498db`, id: 2}, 
-        {action: `Отдохнуть`, color: `#e67e22`, id: 3}, 
-        {action: `Работать`, color: `#95a5a6`, id: 4}
-    ]); 
+    const [bars, setBars] = useState(initialBars);
+    const [actions, setActions] = useState(initialActions); 
 
     const controlClickHandler = (evt) => setBars(helpers.updateBars(bars, evt.target.innerHTML));
 
