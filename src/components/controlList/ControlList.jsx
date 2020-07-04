@@ -13,7 +13,7 @@ const ControlList = ({actions, handleClick}) => (
 ControlList.propTypes = {
     actions: PropTypes.arrayOf(PropTypes.shape({
         action: PropTypes.string.isRequired,
-        color: PropTypes.string.isRequired,
+        modifier: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
     })),
     handleClick: PropTypes.func.isRequired

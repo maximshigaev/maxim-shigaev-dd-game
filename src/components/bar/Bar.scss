@@ -18,3 +18,19 @@
         }
     }
 }
+
+.bar--health .bar__line--filled {
+    background-color: #e74c3c;
+}
+
+.bar--thirst .bar__line--filled {
+    background-color: #3498db; 
+}
+
+.bar--hunger .bar__line--filled {
+    background-color: #e67e22;
+}
+
+.bar--fatigue .bar__line--filled {
+    background-color: #95a5a6;
+}

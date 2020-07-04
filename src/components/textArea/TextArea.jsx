@@ -7,7 +7,8 @@ const TextArea = () => {
     const handleChange = (evt) => setValue(evt.target.value);
 
     return (
-        <textarea class="textarea" value={value} placeholder="Insert your command..." onChange={handleChange}></textarea>
+        <textarea className="textarea" value={value} placeholder="Insert your command..."
+            onChange={handleChange}></textarea>
     );
 }
 

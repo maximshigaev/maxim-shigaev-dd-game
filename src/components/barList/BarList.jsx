@@ -13,7 +13,7 @@ const BarList = ({bars}) => (
 BarList.propTypes = {
     bars: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
-        color: PropTypes.string.isRequired,
+        modifier: PropTypes.string.isRequired,
         quantity: PropTypes.number.isRequired,
         id: PropTypes.number.isRequired
     }))
