@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Control.scss';
 
@@ -14,5 +15,13 @@ const Control = ({options: {action, color}, handleClick}) => {
         </div>
     );
 };
+
+Control.propTypes = {
+    options: PropTypes.shape({
+        action: PropTypes.string.isRequired,
+        color: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
+    })
+}
 
 export { Control };

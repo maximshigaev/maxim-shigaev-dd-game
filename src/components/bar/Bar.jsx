@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Bar.scss';
 
@@ -16,6 +17,15 @@ const Bar = ({options: {title, color, quantity}}) => {
             </div>
         </div>
     );
+}
+
+Bar.propTypes = {
+    options: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        color: PropTypes.string.isRequired,
+        quantity: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired
+    })
 }
 
 export { Bar };
