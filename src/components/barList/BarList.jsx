@@ -11,7 +11,7 @@ const BarList = ({bars}) => (
 );
 
 BarList.propTypes = {
-    bars: PropTypes.arrayOf(PropTypes.shape({
+    bars: PropTypes.arrayOf(PropTypes.exact({
         title: PropTypes.string.isRequired,
         modifier: PropTypes.string.isRequired,
         quantity: PropTypes.number.isRequired,

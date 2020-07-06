@@ -20,7 +20,7 @@ const Control = ({options: {action, modifier}, handleClick}) => {
 }
 
 Control.propTypes = {
-    options: PropTypes.shape({
+    options: PropTypes.exact({
         action: PropTypes.string.isRequired,
         modifier: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired

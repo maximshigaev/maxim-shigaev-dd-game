@@ -11,7 +11,7 @@ const ControlList = ({actions, handleClick}) => (
 );
 
 ControlList.propTypes = {
-    actions: PropTypes.arrayOf(PropTypes.shape({
+    actions: PropTypes.arrayOf(PropTypes.exact({
         action: PropTypes.string.isRequired,
         modifier: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired

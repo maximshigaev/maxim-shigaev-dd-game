@@ -13,7 +13,7 @@ const Bar = ({options: {title, modifier, quantity}}) => (
 );
 
 Bar.propTypes = {
-    options: PropTypes.shape({
+    options: PropTypes.exact({
         title: PropTypes.string.isRequired,
         modifier: PropTypes.string.isRequired,
         quantity: PropTypes.number.isRequired,
