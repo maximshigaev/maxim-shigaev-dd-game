@@ -4,11 +4,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import './reset.scss';
 import './scaffolding.scss';
-import { App } from './components/app/App';
+import { App } from './components/app/App.jsx';
+import { ErrorBoundary } from './components/errorBoundary/ErrorBoundary.jsx';
 
 ReactDOM.render(
-    <Router>
-        <App />
-    </Router>,
+    <ErrorBoundary>
+        <Router>
+            <App />
+        </Router>
+    </ErrorBoundary>,
     document.getElementById('root')
 );
