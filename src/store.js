@@ -11,3 +11,5 @@ export const initialActions = [
     {action: `Отдохнуть`, modifier: `rest`, id: 3}, 
     {action: `Работать`, modifier: `work`, id: 4}
 ];
+
+export const appliedActions = [];

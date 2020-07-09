@@ -1,3 +1,5 @@
+import { appliedActions } from './store.js';
+
 const getRandomBoolean = () => Math.random() > 0.5;
 
 const getRandomInteger = (min, max) => {
@@ -28,6 +30,26 @@ const mapActionToBar = {
     }
 }
 
+const logActionToHistory = (action, barTitle, diff, quantity) => {
+    const loggedAction = appliedActions.find((appliedAction) => appliedAction.id === action.id);
+    const changedBar = {
+        barTitle,
+        diff,
+        quantity
+    }
+
+    if(!loggedAction) {
+        const newAction = {
+            ...action,
+            changedBars: [changedBar]
+        }
+
+        appliedActions.push(newAction);        
+    } else {
+        loggedAction.changedBars.push(changedBar);
+    }
+}
+
 const updateBar = (title, bars, action) => {
     const currentBar = bars.find((bar) => bar.title === title);
     const quantityDiff =  mapActionToBar[action.title][title]();    
@@ -35,11 +57,15 @@ const updateBar = (title, bars, action) => {
         ? Math.min(currentBar.quantity + quantityDiff, 100)
         : Math.max(currentBar.quantity + quantityDiff, 0);
         
+    logActionToHistory(action, title, quantityDiff, newQuantity);
+    
     return {
         ...currentBar,
         quantity: newQuantity
     }
 }
+
+
 
 export const updateBars = (bars, action) => {
     const updatedBars = [];
