@@ -1,5 +1,6 @@
 const Routes = {
-    MAIN_PAGE: '/'
+    MAIN_PAGE: '/',
+    HISTORY_PAGE: '/history'
 }
 
 export { Routes };

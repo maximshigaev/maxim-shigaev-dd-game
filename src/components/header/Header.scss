@@ -5,4 +5,22 @@
     font-weight: 700;
     padding-top: 50px;
     padding-bottom: 49px;
+    position: relative;
+}
+
+.header__link {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 18px;
+    color: black;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 }
