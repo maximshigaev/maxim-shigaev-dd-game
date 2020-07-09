@@ -10,8 +10,14 @@
     font-weight: 700;
 }
 
+.empty {
+    margin-top: 50px;
+    text-align: center;
+}
+
 @media (min-width: 768px) {
-    .heading {
+    .heading,
+    .empty {
         width: 100%;
     }
 }

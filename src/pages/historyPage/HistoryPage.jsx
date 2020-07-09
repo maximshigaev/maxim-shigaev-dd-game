@@ -7,16 +7,21 @@ import { appliedActions } from '../../store.js';
 import './HistoryPage.scss';
 
 const HistoryPage = () => {
+    const isEmpty = !appliedActions.length;
+
     return (
         <>
             <Header />
             <main className="wrapper">
                 <h1 className="heading">История действий</h1>
-                <table className="table">
-                    <tbody className="tbody">
-                        {appliedActions.map((action) => <Action key={action.id} action={action} />)}
-                    </tbody>
-                </table>
+                {isEmpty && <p className="empty">Вы пока не совершили ни одного действия, история пуста.</p>}
+                {!isEmpty &&
+                    <table className="table">
+                        <tbody className="tbody">
+                            {appliedActions.map((action) => <Action key={action.id} action={action} />)}
+                        </tbody>
+                    </table>
+                }
             </main>
         </>
     );
