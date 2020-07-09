@@ -1,0 +1,37 @@
+.row {
+    width: 100%;
+    display: block;
+
+    &--main {
+        margin-top: 50px;
+    }
+
+    &--heading {
+        margin-top: 5px;
+    }
+    
+    &--main,
+    &--heading {
+        line-height: 25px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        border-top: 1px solid black;
+    }
+}
+
+.cell {
+    display: inline-block;
+    text-align: center;
+    
+    &--little {
+        width: 25%;
+    }
+
+    &--medium {
+        width: 30%;
+    }
+
+    &--big {
+        width: 45%;
+    }
+}
