@@ -4,7 +4,7 @@ import { BarList } from '../../components/barList/BarList.jsx';
 import { Header } from '../../components/header/Header.jsx';
 import { ControlList } from '../../components/controlList/ControlList.jsx';
 import { TextArea } from '../../components/textArea/TextArea.jsx';
-import { initialBars, initialActions } from '../../store.js';
+import { initialBars } from '../../store.js';
 import * as helpers from '../../helpers.js';
 import { Notification } from '../../components/notification/Notification.jsx';
 
@@ -14,7 +14,6 @@ let isNotificationError = false;
 
 const MainPage = () => {
     const [bars, setBars] = useState(initialBars);
-    const [actions, setActions] = useState(initialActions);
     const [notification, setNotification] = useState(null);
     
     const cleanUp = () => {
@@ -55,7 +54,7 @@ const MainPage = () => {
             <Header />
             <main className="wrapper">
                 <BarList bars={bars} />
-                <ControlList actions={actions} handleControlClick={handleCommandRun}
+                <ControlList handleControlClick={handleCommandRun}
                     handleEnterKeyDown={handleCommandRun}
                 />
                 <TextArea handleEnterKeyDown={handleCommandRun} notify={notify} />

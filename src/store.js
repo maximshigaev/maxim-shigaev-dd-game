@@ -5,7 +5,7 @@ export const initialBars = [
     {title: `Усталость`, modifier: `fatigue`, quantity: 50, id: 4}
 ];
 
-export const initialActions = [
+export const actions = [
     {action: `Есть`, modifier: `eat`, id: 1}, 
     {action: `Пить`, modifier: `drink`, id: 2}, 
     {action: `Отдохнуть`, modifier: `rest`, id: 3}, 
