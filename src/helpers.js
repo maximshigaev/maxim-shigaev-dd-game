@@ -8,7 +8,9 @@ const getRandomInteger = (min, max) => {
   return Math.floor(rand);
 }
 
-const mapActionToBar = {
+export const formatCommand = (command) => command[0].toUpperCase() + command.toLowerCase().slice(1);
+
+export const mapActionToBar = {
     Есть: {
         Здоровье: () => getRandomBoolean() ? 2 : -2,
         Голод: () => -10

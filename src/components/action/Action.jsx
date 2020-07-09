@@ -35,7 +35,7 @@ const Action = ({action}) => {
 Action.propTypes = {
     action: PropTypes.exact({
         title: PropTypes.string.isRequired,
-        date: Date,
+        date:  PropTypes.instanceOf(Date),
         id: PropTypes.number.isRequired,
         changedBars: PropTypes.arrayOf(PropTypes.exact({
             barTitle: PropTypes.string.isRequired,

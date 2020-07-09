@@ -10,6 +10,7 @@ import { Notification } from '../../components/notification/Notification.jsx';
 
 let timeoutId;
 let appliedActionId = 0;
+let isNotificationError = false;
 
 const MainPage = () => {
     const [bars, setBars] = useState(initialBars);
@@ -23,7 +24,9 @@ const MainPage = () => {
 
     useEffect(() => () => cleanUp(), []);
     
-    const notify = (content) => {
+    const notify = (content, isError = false) => {
+        isNotificationError = isError;
+
         if (notification) {            
             cleanUp();
         }
@@ -33,7 +36,7 @@ const MainPage = () => {
         timeoutId = setTimeout(cleanUp, 5000);
     }
 
-    const controlClickHandler = (evt) => {    
+    const controlClickHandler = (evt, isMultiple = false) => {   
         const action = {
             title: evt.target.innerHTML,
             date: new Date(),
@@ -41,7 +44,10 @@ const MainPage = () => {
         }
 
         setBars(helpers.updateBars(bars, action));
-        notify(`Действие "${evt.target.innerHTML}" выполнено`);
+
+        if (!isMultiple) {
+            notify(`Действие "${evt.target.innerHTML}" выполнено`);
+        }
     }
 
     return (
@@ -50,10 +56,10 @@ const MainPage = () => {
             <main className="wrapper">
                 <BarList bars={bars} />
                 <ControlList actions={actions} handleClick={controlClickHandler} />
-                <TextArea  />
+                <TextArea handleEnterPress={controlClickHandler} notify={notify} />
             </main>
             {notification &&
-                <Notification>
+                <Notification mode={isNotificationError ? `error` : `ok`}>
                     {notification}
                 </Notification>
             }
