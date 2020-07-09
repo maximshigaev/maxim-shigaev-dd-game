@@ -14,7 +14,7 @@ ChangedBar.propTypes = {
         barTitle: PropTypes.string.isRequired,
         diff: PropTypes.number.isRequired,
         quantity: PropTypes.number.isRequired
-    })
+    }).isRequired
 }
 
 export { ChangedBar };

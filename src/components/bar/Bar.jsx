@@ -18,7 +18,7 @@ Bar.propTypes = {
         modifier: PropTypes.string.isRequired,
         quantity: PropTypes.number.isRequired,
         id: PropTypes.number.isRequired
-    })
+    }).isRequired
 }
 
 export { Bar };

@@ -35,13 +35,13 @@ const Action = ({action}) => {
 Action.propTypes = {
     action: PropTypes.exact({
         title: PropTypes.string.isRequired,
-        date:  PropTypes.instanceOf(Date),
+        date:  PropTypes.instanceOf(Date).isRequired,
         id: PropTypes.number.isRequired,
         changedBars: PropTypes.arrayOf(PropTypes.exact({
             barTitle: PropTypes.string.isRequired,
             diff: PropTypes.number.isRequired,
             quantity: PropTypes.number.isRequired
-        }))
+        })).isRequired
     })
 }
 
