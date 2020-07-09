@@ -7,11 +7,11 @@ import './TextArea.scss';
 
 let isError = false;
 
-const TextArea = ({handleEnterPress, notify}) => {
+const TextArea = ({handleEnterKeyDown, notify}) => {
     const [value, setValue] = useState(``);
-    const handleChange = (evt) => setValue(evt.target.value);
+    const changeHandler = (evt) => setValue(evt.target.value);
 
-    const enterPressHandler = (evt) => {        
+    const enterKeyDownHandler = (evt) => {        
         if (evt.keyCode === 13) {
             const commands = evt.target.value.split(`+`).map((command) => command.trim());
             isError = false;
@@ -38,7 +38,7 @@ const TextArea = ({handleEnterPress, notify}) => {
             }
 
             if (!isError) {
-                commands.forEach((command) => handleEnterPress({target: {innerHTML: formatCommand(command)}}, true));
+                commands.forEach((command) => handleEnterKeyDown({target: {innerHTML: formatCommand(command)}}, true));
 
                 const notification = commands.length === 1
                     ? `Действие "${commands[0]}" выполнено`
@@ -55,12 +55,12 @@ const TextArea = ({handleEnterPress, notify}) => {
     return (
         <textarea className="textarea" value={value}
             placeholder="Введите Ваши команды через знак '+' в формате 'есть+пить+работать' и нажмите Enter"
-            onChange={handleChange} onKeyDown={enterPressHandler}></textarea>
+            onChange={changeHandler} onKeyDown={enterKeyDownHandler}></textarea>
     );
 }
 
 TextArea.propTypes = {
-    handleEnterPress: PropTypes.func.isRequired,
+    handleEnterKeyDown: PropTypes.func.isRequired,
     notify: PropTypes.func.isRequired
 }
 

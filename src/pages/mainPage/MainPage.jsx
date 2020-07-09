@@ -36,7 +36,7 @@ const MainPage = () => {
         timeoutId = setTimeout(cleanUp, 5000);
     }
 
-    const controlClickHandler = (evt, isMultiple = false) => {   
+    const handleCommandRun = (evt, isMultiple = false) => {
         const action = {
             title: evt.target.innerHTML,
             date: new Date(),
@@ -55,8 +55,10 @@ const MainPage = () => {
             <Header />
             <main className="wrapper">
                 <BarList bars={bars} />
-                <ControlList actions={actions} handleClick={controlClickHandler} />
-                <TextArea handleEnterPress={controlClickHandler} notify={notify} />
+                <ControlList actions={actions} handleControlClick={handleCommandRun}
+                    handleEnterKeyDown={handleCommandRun}
+                />
+                <TextArea handleEnterKeyDown={handleCommandRun} notify={notify} />
             </main>
             {notification &&
                 <Notification mode={isNotificationError ? `error` : `ok`}>
